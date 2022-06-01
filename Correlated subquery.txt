@@ -1,0 +1,19 @@
+select e.employee_id, e.first_name, e.last_name, e.job_id, e.salary
+
+from employees e
+where salary = (select max(salary) from employees b where b.department_id = e.department_id);
+
+
+-- workers who earn less than the average salary of a department
+select e.employee_id, e.first_name, e.last_name, e.job_id, e.salary
+
+from employees e
+where salary < (select avg(salary) from employees b where b.department_id = e.department_id);
+
+
+-- Another example
+select e.employee_id, e.first_name, e.last_name, e.department_id, e.salary,
+        (select round(avg(salary)) from employees 
+         where department_id = d.department_id)  "department average salary"
+
+from employees e join departments d on (e.department_id = d.department_id)

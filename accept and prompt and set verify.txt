@@ -1,0 +1,12 @@
+accept emp_id prompt 'Please, Enter an Employee ID:';
+
+/* accept takes an input while prompt is used to show a message  */
+select employee_id, first_name, last_name, salary
+From employees 
+where employee_id = &emp_id;
+
+undefine emp_id;
+
+set verify on;
+
+set verify off;

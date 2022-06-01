@@ -1,0 +1,6 @@
+select employee_id, first_name, last_name, salary, rowid, rownum from (
+select employee_id, first_name, last_name, salary, rowid
+from employees
+where department_id =80
+ order by salary desc)
+ where rownum <=5;

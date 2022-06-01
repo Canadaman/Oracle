@@ -1,0 +1,5 @@
+-- it returns all employees who are managers for somebody
+select e.employee_id, e.first_name, e.last_name, e.department_id
+from employees e
+where exists 
+            (select 1 from employees b where b.manager_id = e.employee_id)    ;

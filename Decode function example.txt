@@ -1,0 +1,6 @@
+select first_name, last_name, job_id, salary,
+  decode(job_id, 'ST_CLERK', salary*1.20,
+                  'SA_REP', salary*1.30,
+                  'IT_PROG', salary*1.50,
+                  salary) as Updated_salary
+From employees;

@@ -1,0 +1,4 @@
+ select first_name, last_name, to_char(hire_date, 'DDTH MONTH YYYY') from employees;
+ 
+ Select to_char(salary, 'L00099,999.00'), salary from employees;
+  Select to_char(salary, '$99,999.00'), salary from employees;

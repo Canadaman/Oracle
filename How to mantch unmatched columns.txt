@@ -1,0 +1,5 @@
+
+-- An example --- just put null instead of a column
+select job_id, department_id, first_name, last_name from employees
+union
+select job_id, department_id, null, null from job_history;

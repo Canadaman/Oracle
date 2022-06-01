@@ -1,0 +1,30 @@
+select employee_id, first_name, last_name, department_id
+from employees
+where department_id = &department_no;
+
+select employee_id, first_name, last_name, department_id
+from employees
+where first_name = '&f_name'; -- for string variables
+
+select employee_id, first_name, last_name, &column_name
+from &table_name
+where &condition
+order by &order_by; 
+
+
+select employee_id, first_name, last_name, &&column
+from employees
+order by &&column -- it saves a variable constantly
+
+
+-- defined variables
+
+define depart_no = 60;
+select employee_id, first_name, last_name, department_id
+from employees
+where department_id = &depart_no;
+
+-- if I want to delete a difined variable, I should use the next code
+undefine depart_no;
+
+define; -- to see all defined variables

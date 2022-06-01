@@ -1,0 +1,10 @@
+select employee_id, first_name, last_name, salary
+from employees
+ order by salary desc
+ offset 1 row fetch first 5 rows only ;
+
+
+select employee_id, first_name, last_name, salary
+from employees
+ order by salary desc
+ offset 1 row fetch first 5 rows with ties ;

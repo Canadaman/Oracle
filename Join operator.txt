@@ -1,0 +1,20 @@
+select worker.first_name, worker.last_name, worker.employee_id, manager_t.employee_id, manager_t.first_name, manager_t.last_name,
+ worker.salary, manager_t.salary
+from employees worker left join employees manager_t on worker.manager_id = manager_t.employee_id 
+order by worker.employee_id;
+
+
+Non Equijons 
+
+select e.employee_id, e.first_name, e.last_name, e.job_id, e.salary,
+     j.min_salary, j.max_salary, j.job_id j_id
+ from employees e join jobs j on e.salary > j.max_salary
+ and j.job_id = 'SA_REP';
+
+ 
+ -- OUTER NONEEQUIJOIN EXAMPLE --------------
+select  e.first_name, e.last_name, j.job_title, e.salary,
+     j.min_salary, j.max_salary
+     From employees e left join jobs j
+     on e.job_id= j.job_id
+     and e.salary between j.min_salary + 5000 and j.max_salary;

@@ -1,0 +1,24 @@
+
+select current_date, sessiontimezone, systimestamp, current_timestamp from dual;
+
+select sysdate, sysdate + 4, sysdate - 4 from dual;
+
+select hire_date, sysdate, trunc(sysdate - hire_date) as worked_in_days from employees;
+select hire_date, sysdate, trunc((sysdate - hire_date)/365) as worked_in_years from employees
+order by worked_in_years desc;
+
+select sysdate, add_months(sysdate, -3) from dual;
+
+select months_between(sysdate, '28-jan-79') from dual;
+
+select employee_id, hire_date, trunc(hire_date, 'MONTH') as truncated_result, round(hire_date,'MONTH') as rounded_result
+from employees;
+
+select employee_id, hire_date, trunc(hire_date, 'YEAR') as truncated_result, round(hire_date,'YEAR') as rounded_result
+from employees;
+
+select extract(month from sysdate) from dual;
+
+select next_day (current_date, 'Monday') from dual;
+
+select last_day(current_date) from dual;

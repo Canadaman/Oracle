@@ -1,0 +1,14 @@
+select trim('         An example how to delete empty spaces  ') from dual;
+select ltrim('         An example how to delete empty spaces  ') from dual;
+select rtrim('         An example how to delete empty spaces  ') from dual;
+select trim('         An example how to delete empty spaces  ') from dual;
+select trim( both ' ' from '         An example how to delete empty spaces  ') from dual;
+select trim( leading ' ' from '         An example how to delete empty spaces  ') trimmed_text from dual;
+select trim( Trailing ' ' from '         An example how to delete empty spaces  ') trimmed_text from dual;
+
+select trim( leading 'A' from 'An example how to delete empty spaces  ') trimmed_text from dual;
+select trim( Trailing 's' from '         An example how to delete empty spaces') trimmed_text from dual;
+
+select ltrim('An example how to delete empty spaces  ', 'An') from dual;
+select rtrim( ltrim ('www.yourwebsitename.com', 'w.'), '.com') from dual;
+select ltrim ('3456765876876www.yourwebsitename.com', '0123456789') from dual;

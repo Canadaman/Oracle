@@ -1,0 +1,8 @@
+select Listagg(first_name, ',') within group (order by first_name)
+From employees
+where job_id= 'ST_CLERK';
+
+select j.job_title,
+ listagg (e.first_name,',') within group (order by e.first_name) as employees_list
+ from employees e left join jobs j on e.job_id = j.job_id
+ group by j.job_title;
